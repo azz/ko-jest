@@ -1,0 +1,22 @@
+<header>
+    <input
+        class="-security-input"
+        data-bind="value: securityCode, event: { keyup: onSearch }"
+    />
+</header>
+<main>
+    <section>
+        Bid Price: <span data-bind="text: bidPrice"></span>
+    </section>
+    <section>
+        Last Price: <span data-bind="text: lastPrice"></span>
+    </section>
+    <section>
+        Ask Price: <span data-bind="text: askPrice"></span>
+    </section>
+
+    <!-- ko if: hasTradingPermission() -->
+    <button class="-buy-button" data-bind="click: onBuy">Buy</button>
+    <button class="-sell-button" data-bind="click: onSell">Sell</button>
+    <!-- /ko -->
+</main>
