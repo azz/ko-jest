@@ -2,7 +2,7 @@ const ko = require("knockout");
 const { JSDOM } = require("jsdom");
 const fs = require("fs");
 
-module.exports = { getTemplate, renderTemplateToDom, renderTemplateToString };
+module.exports = { getTemplate, renderTemplateToDom, renderTemplateToRaw };
 
 function renderTemplateToDom(template, vm) {
   const dom = new JSDOM(`<div id=template>${template}</div>`);
@@ -23,10 +23,10 @@ function stripKnockoutThings(node) {
   }
 }
 
-function renderTemplateToString(template, vm) {
+function renderTemplateToRaw(template, vm) {
   const { dom } = renderTemplateToDom(template, vm);
   stripKnockoutThings(dom.parentNode);
-  return dom.innerHTML;
+  return { [Symbol.for("raw")]: dom.innerHTML };
 }
 
 function getTemplate(path) {

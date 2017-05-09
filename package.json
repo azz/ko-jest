@@ -13,5 +13,10 @@
   },
   "dependencies": {
     "knockout": "^3.4.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "<rootDir>/src/raw-serializer.js"
+    ]
   }
 }

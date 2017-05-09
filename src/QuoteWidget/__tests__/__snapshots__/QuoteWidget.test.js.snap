@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Quote Widget doesn't show buy/sell buttons if there's no trading permissions 1`] = `
-"<header>
-    <input class=\\"-security-input\\">
+exports[`Quote Widget buy/sell buttons doesn't show buy/sell buttons if there's no trading permissions 1`] = `
+<header>
+    <input class="-security-input">
 </header>
 <main>
     <section>
@@ -17,12 +17,12 @@ exports[`Quote Widget doesn't show buy/sell buttons if there's no trading permis
 
     <!-- /ko -->
 </main>
-"
+
 `;
 
 exports[`Quote Widget renders altered last price 1`] = `
-"<header>
-    <input class=\\"-security-input\\">
+<header>
+    <input class="-security-input">
 </header>
 <main>
     <section>
@@ -36,16 +36,16 @@ exports[`Quote Widget renders altered last price 1`] = `
     </section>
 
     
-    <button class=\\"-buy-button\\">Buy</button>
-    <button class=\\"-sell-button\\">Sell</button>
+    <button class="-buy-button">Buy</button>
+    <button class="-sell-button">Sell</button>
     
 </main>
-"
+
 `;
 
 exports[`Quote Widget renders successfully 1`] = `
-"<header>
-    <input class=\\"-security-input\\">
+<header>
+    <input class="-security-input">
 </header>
 <main>
     <section>
@@ -59,9 +59,9 @@ exports[`Quote Widget renders successfully 1`] = `
     </section>
 
     
-    <button class=\\"-buy-button\\">Buy</button>
-    <button class=\\"-sell-button\\">Sell</button>
+    <button class="-buy-button">Buy</button>
+    <button class="-sell-button">Sell</button>
     
 </main>
-"
+
 `;
