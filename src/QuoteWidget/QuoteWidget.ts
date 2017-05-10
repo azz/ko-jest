@@ -1,18 +1,19 @@
-const ko = require("knockout");
 
-module.exports = class QuoteWidget {
-  constructor(orderTicketInvoker, securitySearch) {
-    this._orderTicketInvoker = orderTicketInvoker;
-    this._securitySearch = securitySearch;
+import * as ko from "knockout";
 
-    this.securityCode = ko.observable("IRE.ASX");
-    this.bidPrice = ko.observable(1);
-    this.lastPrice = ko.observable(2);
-    this.askPrice = ko.observable(3);
-    this.hasTradingPermission = ko.observable(true);
-  }
+export default class QuoteWidget {
+  securityCode = ko.observable("IRE.ASX");
+  bidPrice = ko.observable(1);
+  lastPrice = ko.observable(2);
+  askPrice = ko.observable(3);
+  hasTradingPermission = ko.observable(true);
 
-  onSearch(vm, event) {
+  constructor(
+    private _orderTicketInvoker,
+    private _securitySearch
+  ) {}
+
+  onSearch(vm: this, event) {
     this._securitySearch.search(
       event.target.value,
       this.onSearchResult.bind(this)

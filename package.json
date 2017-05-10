@@ -5,8 +5,11 @@
   "author": "Lucas Azzola <lucas.azzola@iress.com.au>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/jest": "^19.2.3",
+    "@types/node": "^7.0.18",
     "jest": "^20.0.0",
-    "jsdom": "^10.1.0"
+    "jsdom": "^10.1.0",
+    "typescript": "^2.3.2"
   },
   "scripts": {
     "test": "jest"
@@ -15,8 +18,19 @@
     "knockout": "^3.4.2"
   },
   "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/ts-preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ],
     "snapshotSerializers": [
-      "<rootDir>/src/raw-serializer.js"
+      "<rootDir>/raw-serializer.js"
     ]
   }
 }

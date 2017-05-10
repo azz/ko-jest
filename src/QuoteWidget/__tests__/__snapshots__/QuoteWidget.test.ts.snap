@@ -35,10 +35,8 @@ exports[`Quote Widget renders altered last price 1`] = `
         Ask Price: <span>3</span>
     </section>
 
-    
     <button class="-buy-button">Buy</button>
     <button class="-sell-button">Sell</button>
-    
 </main>
 
 `;
@@ -58,10 +56,8 @@ exports[`Quote Widget renders successfully 1`] = `
         Ask Price: <span>3</span>
     </section>
 
-    
     <button class="-buy-button">Buy</button>
     <button class="-sell-button">Sell</button>
-    
 </main>
 
 `;

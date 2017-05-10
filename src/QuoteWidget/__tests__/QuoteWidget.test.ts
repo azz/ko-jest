@@ -1,11 +1,12 @@
-const {
+import {
   getTemplate,
   renderTemplateToDom,
   renderTemplateToRaw
-} = require("../../utils");
+} from "../../utils";
 
-const path = require("path");
-const QuoteWidget = require("../QuoteWidget");
+import * as path from "path";
+import QuoteWidget from "../QuoteWidget";
+
 const templatePath = path.resolve(__dirname, "..", "Tmpl_QuoteWidget.html");
 
 describe("Quote Widget", () => {
