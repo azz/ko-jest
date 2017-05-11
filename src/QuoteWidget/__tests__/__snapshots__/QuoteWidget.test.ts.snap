@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissions 1`] = `
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -30,11 +28,9 @@ exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissi
     </section>
     <!-- /ko -->
   </main>
-</div>
+</body>
 ------------HTML PREVIEW---------------
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -61,13 +57,11 @@ exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissi
     </section>
     <!-- /ko -->
   </main>
-</div>
+</body>
 `;
 
 exports[`Quote Widget renders altered last price 1`] = `
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -103,11 +97,9 @@ exports[`Quote Widget renders altered last price 1`] = `
       Sell
     </button>
   </main>
-</div>
+</body>
 ------------HTML PREVIEW---------------
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -143,13 +135,11 @@ exports[`Quote Widget renders altered last price 1`] = `
       Sell
     </button>
   </main>
-</div>
+</body>
 `;
 
 exports[`Quote Widget renders successfully 1`] = `
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -185,11 +175,9 @@ exports[`Quote Widget renders successfully 1`] = `
       Sell
     </button>
   </main>
-</div>
+</body>
 ------------HTML PREVIEW---------------
-<div
-  id="template"
->
+<body>
   <header>
     <input
       class="-security-input"
@@ -225,5 +213,5 @@ exports[`Quote Widget renders successfully 1`] = `
       Sell
     </button>
   </main>
-</div>
+</body>
 `;

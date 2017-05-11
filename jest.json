@@ -1,0 +1,22 @@
+{
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "transform": {
+        "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+        "**/__tests__/*.(ts|tsx|js)"
+    ],
+    "snapshotSerializers": [
+        "<rootDir>/dom-serializer.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "src/**/*.ts",
+        "!src/TestUtils/*.ts"
+    ],
+    "mapCoverage": true
+}

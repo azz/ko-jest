@@ -9,30 +9,14 @@
     "@types/node": "^7.0.18",
     "jest": "^20.0.0",
     "jest-html": "^1.3.4",
-    "jsdom": "^10.1.0",
+    "ts-jest": "^20.0.3",
     "typescript": "^2.3.2"
   },
   "scripts": {
-    "test": "jest",
-    "test-html": "jest-html"
+    "test": "jest -c jest.json",
+    "test:html": "jest-html -c jest.json"
   },
   "dependencies": {
     "knockout": "^3.4.2"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/ts-preprocessor.js"
-    },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx|js)"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/dom-serializer.js"
-    ]
   }
 }

@@ -9,9 +9,6 @@ module.exports = {
     );
   },
   test(val) {
-    return (
-      val &&
-      Object.prototype.hasOwnProperty.call(val, DOM)
-    );
+    return val && Object.prototype.hasOwnProperty.call(val, DOM);
   }
 };

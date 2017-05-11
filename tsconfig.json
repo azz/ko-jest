@@ -5,7 +5,10 @@
         "types": [
             "node",
             "jest"
-        ]
+        ],
+        "sourceMap": true,
+        "inlineSourceMap": true,
+        "inlineSources": true
     },
     "include": [
         "src/**/*.ts"

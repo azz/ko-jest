@@ -24,6 +24,8 @@ export default class QuoteWidget {
   onSearchResult(response) {
     if (response.success) {
       this.securityCode(response.code);
+    } else {
+      this.securityCode("");
     }
   }
 

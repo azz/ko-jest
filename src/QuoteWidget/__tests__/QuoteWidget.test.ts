@@ -1,21 +1,25 @@
-import {
-  getTemplate,
-  renderTemplateToDom,
-  renderTemplateToRaw
-} from "../../utils";
+import { getTemplate, renderDom, renderSnapshot } from "../../TestUtils";
 import * as ko from "knockout";
 import * as path from "path";
 import QuoteWidget from "../QuoteWidget";
 
 const templatePath = path.resolve(__dirname, "..", "Tmpl_QuoteWidget.html");
+const tmpl = getTemplate(templatePath);
+
+const selectors = {
+  buyButton: () =>
+    document.querySelector(".-buy-button") as HTMLButtonElement,
+  sellButton: () =>
+    document.querySelector(".-sell-button") as HTMLButtonElement,
+  securityInput: () =>
+    document.querySelector(".-security-input") as HTMLInputElement,
+}
 
 describe("Quote Widget", () => {
   let script, widget, orderTicketInvoker, securitySearch, datePicker;
 
   const snapshot = () =>
-    expect(
-      renderTemplateToRaw(getTemplate(templatePath), widget)
-    ).toMatchSnapshot();
+    expect(renderSnapshot(tmpl, widget)).toMatchSnapshot();
 
   beforeEach(() => {
     // Mock a template
@@ -26,7 +30,6 @@ describe("Quote Widget", () => {
     //   <div data-bind="text: currentDate></div>
     // `;
     // document.body.appendChild(script);
-
 
     orderTicketInvoker = {
       buy: jest.fn(),
@@ -60,8 +63,8 @@ describe("Quote Widget", () => {
 
     it("calls orderTicketInvoker.buy with bid price when the buy button is clicked", () => {
       widget.bidPrice(888);
-      const { dom } = renderTemplateToDom(getTemplate(templatePath), widget);
-      dom.querySelector(".-buy-button").click();
+      renderDom(tmpl, widget);
+      selectors.buyButton().click();
       expect(orderTicketInvoker.buy).toHaveBeenCalledWith({
         code: "IRE.ASX",
         price: 888
@@ -70,8 +73,8 @@ describe("Quote Widget", () => {
 
     it("calls orderTicketInvoker.sell with ask price when the sell button is clicked", () => {
       widget.askPrice(777);
-      const { dom } = renderTemplateToDom(getTemplate(templatePath), widget);
-      dom.querySelector(".-sell-button").click();
+      renderDom(tmpl, widget);
+      selectors.sellButton().click();
       expect(orderTicketInvoker.sell).toHaveBeenCalledWith({
         code: "IRE.ASX",
         price: 777
@@ -81,14 +84,11 @@ describe("Quote Widget", () => {
 
   describe("search", () => {
     it("calls securitySearch.search with entered text on key up", () => {
-      const { dom, window } = renderTemplateToDom(
-        getTemplate(templatePath),
-        widget
-      );
-      const input = dom.querySelector(".-security-input");
+      renderDom(tmpl, widget);
+      const input = selectors.securityInput();
       expect(input).not.toBeNull();
       input.value = "BHP";
-      input.dispatchEvent(new window.Event("keyup"));
+      input.dispatchEvent(new Event("keyup"));
       expect(securitySearch.search).toHaveBeenCalledWith(
         "BHP",
         expect.any(Function)
@@ -96,7 +96,7 @@ describe("Quote Widget", () => {
     });
 
     it("changes value of search box when a successful result comes back", () => {
-      const { dom } = renderTemplateToDom(getTemplate(templatePath), widget);
+      renderDom(tmpl, widget);
       securitySearch.search = jest.fn((text, cb) =>
         cb({
           success: true,
@@ -104,7 +104,19 @@ describe("Quote Widget", () => {
         })
       );
       widget.onSearch(null, { target: { value: "RIO" } });
-      expect(dom.querySelector(".-security-input").value).toBe("RIO.ASX");
+      expect(selectors.securityInput().value).toBe("RIO.ASX");
+    });
+
+    it("clears value of search box when an error comes back", () => {
+      renderDom(tmpl, widget);
+      securitySearch.search = jest.fn((text, cb) =>
+        cb({
+          success: false,
+          error: "Not Found"
+        })
+      );
+      widget.onSearch(null, { target: { value: "BANANA" } });
+      expect(selectors.securityInput().value).toBe("");
     });
   });
 });
