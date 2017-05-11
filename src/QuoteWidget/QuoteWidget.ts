@@ -10,7 +10,8 @@ export default class QuoteWidget {
 
   constructor(
     private _orderTicketInvoker,
-    private _securitySearch
+    private _securitySearch,
+    private _datePicker
   ) {}
 
   onSearch(vm: this, event) {

@@ -3,14 +3,14 @@ import {
   renderTemplateToDom,
   renderTemplateToRaw
 } from "../../utils";
-
+import * as ko from "knockout";
 import * as path from "path";
 import QuoteWidget from "../QuoteWidget";
 
 const templatePath = path.resolve(__dirname, "..", "Tmpl_QuoteWidget.html");
 
 describe("Quote Widget", () => {
-  let widget, orderTicketInvoker, securitySearch;
+  let script, widget, orderTicketInvoker, securitySearch, datePicker;
 
   const snapshot = () =>
     expect(
@@ -18,6 +18,16 @@ describe("Quote Widget", () => {
     ).toMatchSnapshot();
 
   beforeEach(() => {
+    // Mock a template
+    // script = document.createElement('script');
+    // script.type = "text/html";
+    // script.id = "Tmpl_DatePicker";
+    // script.innerHTML = `
+    //   <div data-bind="text: currentDate></div>
+    // `;
+    // document.body.appendChild(script);
+
+
     orderTicketInvoker = {
       buy: jest.fn(),
       sell: jest.fn()
@@ -25,7 +35,12 @@ describe("Quote Widget", () => {
     securitySearch = {
       search: jest.fn()
     };
-    widget = new QuoteWidget(orderTicketInvoker, securitySearch);
+    datePicker = {
+      data: {
+        currentDate: ko.observable(new Date())
+      }
+    }
+    widget = new QuoteWidget(orderTicketInvoker, securitySearch, datePicker);
   });
 
   it("renders successfully", () => {
