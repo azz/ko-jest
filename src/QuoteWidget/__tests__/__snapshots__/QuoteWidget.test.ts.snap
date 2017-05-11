@@ -1,63 +1,229 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Quote Widget buy/sell buttons doesn't show buy/sell buttons if there's no trading permissions 1`] = `
-<header>
-    <input class="-security-input">
-</header>
-<main>
+exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissions 1`] = `
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
     <section>
-        Bid Price: <span>1</span>
+      Blurst Price: 
+      <span>
+        1
+      </span>
     </section>
     <section>
-        Last Price: <span>2</span>
+      Last Price: 
+      <span>
+        2
+      </span>
     </section>
     <section>
-        Ask Price: <span>3</span>
+      Ask Price: 
+      <span>
+        3
+      </span>
     </section>
-
     <!-- /ko -->
-</main>
-
+  </main>
+</div>
+------------HTML PREVIEW---------------
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
+    <section>
+      Blurst Price: 
+      <span>
+        1
+      </span>
+    </section>
+    <section>
+      Last Price: 
+      <span>
+        2
+      </span>
+    </section>
+    <section>
+      Ask Price: 
+      <span>
+        3
+      </span>
+    </section>
+    <!-- /ko -->
+  </main>
+</div>
 `;
 
 exports[`Quote Widget renders altered last price 1`] = `
-<header>
-    <input class="-security-input">
-</header>
-<main>
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
     <section>
-        Bid Price: <span>1</span>
+      Blurst Price: 
+      <span>
+        1
+      </span>
     </section>
     <section>
-        Last Price: <span>100</span>
+      Last Price: 
+      <span>
+        100
+      </span>
     </section>
     <section>
-        Ask Price: <span>3</span>
+      Ask Price: 
+      <span>
+        3
+      </span>
     </section>
-
-    <button class="-buy-button">Buy</button>
-    <button class="-sell-button">Sell</button>
-</main>
-
+    <button
+      class="-buy-button"
+    >
+      Buy
+    </button>
+    <button
+      class="-sell-button"
+    >
+      Sell
+    </button>
+  </main>
+</div>
+------------HTML PREVIEW---------------
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
+    <section>
+      Blurst Price: 
+      <span>
+        1
+      </span>
+    </section>
+    <section>
+      Last Price: 
+      <span>
+        100
+      </span>
+    </section>
+    <section>
+      Ask Price: 
+      <span>
+        3
+      </span>
+    </section>
+    <button
+      class="-buy-button"
+    >
+      Buy
+    </button>
+    <button
+      class="-sell-button"
+    >
+      Sell
+    </button>
+  </main>
+</div>
 `;
 
 exports[`Quote Widget renders successfully 1`] = `
-<header>
-    <input class="-security-input">
-</header>
-<main>
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
     <section>
-        Bid Price: <span>1</span>
+      Blurst Price: 
+      <span>
+        1
+      </span>
     </section>
     <section>
-        Last Price: <span>2</span>
+      Last Price: 
+      <span>
+        2
+      </span>
     </section>
     <section>
-        Ask Price: <span>3</span>
+      Ask Price: 
+      <span>
+        3
+      </span>
     </section>
-
-    <button class="-buy-button">Buy</button>
-    <button class="-sell-button">Sell</button>
-</main>
-
+    <button
+      class="-buy-button"
+    >
+      Buy
+    </button>
+    <button
+      class="-sell-button"
+    >
+      Sell
+    </button>
+  </main>
+</div>
+------------HTML PREVIEW---------------
+<div
+  id="template"
+>
+  <header>
+    <input
+      class="-security-input"
+    />
+  </header>
+  <main>
+    <section>
+      Blurst Price: 
+      <span>
+        1
+      </span>
+    </section>
+    <section>
+      Last Price: 
+      <span>
+        2
+      </span>
+    </section>
+    <section>
+      Ask Price: 
+      <span>
+        3
+      </span>
+    </section>
+    <button
+      class="-buy-button"
+    >
+      Buy
+    </button>
+    <button
+      class="-sell-button"
+    >
+      Sell
+    </button>
+  </main>
+</div>
 `;

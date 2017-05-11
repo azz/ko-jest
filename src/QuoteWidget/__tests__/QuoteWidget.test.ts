@@ -38,7 +38,7 @@ describe("Quote Widget", () => {
   });
 
   describe("buy/sell buttons", () => {
-    it("doesn't show buy/sell buttons if there's no trading permissions", () => {
+    it("are hidden if there's no trading permissions", () => {
       widget.hasTradingPermission(false);
       snapshot();
     });
