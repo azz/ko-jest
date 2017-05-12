@@ -9,9 +9,9 @@ export default class QuoteWidget {
   hasTradingPermission = ko.observable(true);
 
   constructor(
-    private _orderTicketInvoker,
-    private _securitySearch,
-    private _datePicker
+    private readonly _orderTicketInvoker,
+    private readonly _securitySearch,
+    private readonly _datePicker
   ) {}
 
   onSearch(vm: this, event) {

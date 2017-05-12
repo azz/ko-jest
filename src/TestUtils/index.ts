@@ -1,7 +1,8 @@
-const ko = require("knockout");
-const fs = require("fs");
+import * as ko from "knockout";
+import * as fs from "fs";
+import { escape } from "lodash";
 
-export function renderDom(template, vm) {
+export function renderDom(template: string, vm: object) {
   document.body.innerHTML = template;
   try {
     ko.cleanNode(document.body);
@@ -29,6 +30,34 @@ export function renderSnapshot(template, vm) {
   }
 }
 
-export function getTemplate(path) {
-  return fs.readFileSync(path);
+export function getTemplate(path: string) {
+  return fs.readFileSync(path).toString();
+}
+
+ko.bindingHandlers.debugPrint = {
+  update(element, valAccessor) {
+    const object = ko.toJS(valAccessor());
+    element.setAttribute(
+      "data",
+      JSON.stringify(object, null, 4)
+    );
+  },
+}
+// ko.virtualElements.allowedBindings.debugPrint = true;
+
+export function mockTemplate(templateId: string) {
+  const script = document.createElement("script");
+  script.type = "text/html";
+  script.setAttribute("id", templateId);
+  script.innerHTML = `
+    <template
+      name="${escape(templateId)}"
+      data-bind="debugPrint: $data" />
+  `;
+  document.head.appendChild(script);
+  return {
+    remove() {
+      document.head.removeChild(script);
+    }
+  }
 }

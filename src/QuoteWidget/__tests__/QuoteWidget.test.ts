@@ -1,4 +1,4 @@
-import { getTemplate, renderDom, renderSnapshot } from "../../TestUtils";
+import { getTemplate, renderDom, renderSnapshot, mockTemplate } from "../../TestUtils";
 import * as ko from "knockout";
 import * as path from "path";
 import QuoteWidget from "../QuoteWidget";
@@ -16,21 +16,15 @@ const selectors = {
 }
 
 describe("Quote Widget", () => {
-  let script, widget, orderTicketInvoker, securitySearch, datePicker;
+  let widget;
+  let orderTicketInvoker, securitySearch, datePicker;
+  let tmplDatePicker;
 
   const snapshot = () =>
     expect(renderSnapshot(tmpl, widget)).toMatchSnapshot();
 
   beforeEach(() => {
-    // Mock a template
-    // script = document.createElement('script');
-    // script.type = "text/html";
-    // script.id = "Tmpl_DatePicker";
-    // script.innerHTML = `
-    //   <div data-bind="text: currentDate></div>
-    // `;
-    // document.body.appendChild(script);
-
+    tmplDatePicker = mockTemplate("Tmpl_DatePicker");
     orderTicketInvoker = {
       buy: jest.fn(),
       sell: jest.fn()
@@ -40,10 +34,14 @@ describe("Quote Widget", () => {
     };
     datePicker = {
       data: {
-        currentDate: ko.observable(new Date())
+        currentDate: ko.observable(new Date(2017, 6, 12))
       }
     }
     widget = new QuoteWidget(orderTicketInvoker, securitySearch, datePicker);
+  });
+
+  afterEach(() => {
+    tmplDatePicker.remove();
   });
 
   it("renders successfully", () => {

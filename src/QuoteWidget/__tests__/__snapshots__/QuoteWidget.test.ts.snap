@@ -6,6 +6,14 @@ exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissi
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
@@ -35,6 +43,14 @@ exports[`Quote Widget buy/sell buttons are hidden if there's no trading permissi
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
@@ -66,6 +82,14 @@ exports[`Quote Widget renders altered last price 1`] = `
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
@@ -104,6 +128,14 @@ exports[`Quote Widget renders altered last price 1`] = `
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
@@ -144,6 +176,14 @@ exports[`Quote Widget renders successfully 1`] = `
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
@@ -182,6 +222,14 @@ exports[`Quote Widget renders successfully 1`] = `
     <input
       class="-security-input"
     />
+    <div>
+      <template
+        name="Tmpl_DatePicker"
+        data="{
+          "currentDate": "2017-07-11T14:00:00.000Z"
+      }"
+      />
+    </div>
   </header>
   <main>
     <section>
